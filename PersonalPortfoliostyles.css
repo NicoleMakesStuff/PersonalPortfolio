@@ -1,0 +1,346 @@
+/* Color and Font Variables */
+:root {
+    --color-dark: #121212;
+    --color-light: #f5f5f5;
+    --color-accent: #a67c52;
+    --color-text: #333;
+    --font-primary: 'Cormorant Garamond', serif;
+    --font-secondary: 'Montserrat', sans-serif;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--color-light);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(245, 245, 245, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Page Management */
+.page {
+    display: none;
+    min-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.page.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Home Page Styles */
+#home {
+    background-image: url('https://via.placeholder.com/1500x1000.png?text=Home+Background');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5rem;
+}
+
+.home-title {
+    font-family: var(--font-primary);
+    font-size: 6rem;
+    letter-spacing: 8px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.home-subtitle {
+    max-width: 500px;
+    font-size: 1.1rem;
+}
+
+/* Projects Page Styles */
+#projects {
+    padding: 6rem 3rem 3rem;
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--color-dark);
+}
+
+/* Work Page Styles */
+#work {
+    display: flex;
+}
+
+.work-main {
+    width: 60%;
+    position: relative;
+}
+
+.work-sidebar {
+    width: 40%;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 1rem;
+}
+
+.work-main-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.sidebar-projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-project {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.sidebar-project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-counter {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+}
+
+/* Contact Page Styles */
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 3rem 3rem;
+}
+
+.contact-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 2rem;
+}
+
+.contact-info, .contact-form {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--color-accent);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    font-family: var(--font-secondary);
+}
+
+.submit-btn {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--color-accent);
+}
+
+/* Cookie Notice */
+.cookie-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.8);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cookie-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cookie-btn.accept {
+    background-color: white;
+    color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    #work {
+        flex-direction: column;
+    }
+
+    .work-main, .work-sidebar {
+        width: 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
