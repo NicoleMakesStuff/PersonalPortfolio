@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Details - GPS-Based Location Tracker</title>
+  <link rel="stylesheet" href="PersonalPortfoliostyles.css">
+  <style>
+    /* Enhanced Project Detail Page Styles */
+    body {
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .project-banner {
+      width: 100%;
+      max-height: 450px;
+      overflow: hidden;
+      margin-top: 80px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .project-banner img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-banner img:hover {
+      transform: scale(1.05);
+    }
+    .project-content {
+      padding: 3rem 4rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: #f3e9dc;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      margin-top: -40px;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .project-title {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    .project-description {
+      font-size: 1.15rem;
+      max-width: 900px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .project-details {
+      border-top: 1px solid rgba(243, 233, 220, 0.3);
+      padding-top: 2rem;
+    }
+    .project-details h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .project-details h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 50%;
+      height: 3px;
+      background-color: #f3e9dc;
+      border-radius: 3px;
+    }
+    .project-details p,
+    .project-details ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .project-details ul {
+      list-style: disc;
+      margin-left: 2rem;
+    }
+    @media (max-width: 768px) {
+      .project-content {
+        padding: 2rem;
+        margin-top: 0;
+        border-radius: 0;
+      }
+      .project-title {
+        font-size: 2.5rem;
+      }
+      .project-description {
+        font-size: 1rem;
+      }
+      .project-details h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (reused from main portfolio) -->
+  <nav id="navbar" class="navbar">
+    <a href="PersonalPortfolio.html" class="logo">My Portfolio</a>
+    <div class="nav-links">
+        <a href="PersonalPortfolio.html#home" onclick="showPage('home')">Home</a>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section id="project-detail" class="page active">
+    <!-- Banner Image at the Top -->
+    <div class="project-banner">
+      <img src="./gps.jpg" alt="GPS Location Tracker Banner">
+    </div>
+
+    <!-- Project Content -->
+    <div class="project-content">
+      <h1 class="project-title">GPS-Based Location Tracker with ESP32</h1>
+      <p class="project-description">
+        This project features a GPS-based tracker built with an ESP32 and the TinyGPS++ library. It logs real-time location data to EEPROM and an SD card, while offering a web-based interface to view routes on a map.
+      </p>
+      <div class="project-details">
+        <h2>Project Overview</h2>
+        <p>
+          The tracker is designed to monitor and store location data seamlessly. The web interface integrates with Google Maps API to visualize tracked routes, providing a practical solution for location-based tracking.
+        </p>
+        <h2>Technologies Used</h2>
+        <ul>
+          <li>ESP32 Microcontroller</li>
+          <li>TinyGPS++ Library</li>
+          <li>EEPROM & SD Card Storage</li>
+          <li>Google Maps API</li>
+          <li>HTML, CSS & JavaScript for Web Interface</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="PersonalPortfolioscript.js"></script>
+</body>
+</html>

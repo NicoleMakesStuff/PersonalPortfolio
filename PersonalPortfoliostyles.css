@@ -1,9 +1,6 @@
 /* Color and Font Variables */
 :root {
-    --color-dark: #121212;
-    --color-light: #f5f5f5;
-    --color-accent: #a67c52;
-    --color-text: #333;
+    /* Removed solid background-color and use gradient in body */
     --font-primary: 'Cormorant Garamond', serif;
     --font-secondary: 'Montserrat', sans-serif;
 }
@@ -16,8 +13,12 @@
 }
 
 body {
+    background-image: url("./backgroundd.jpg");
     font-family: var(--font-secondary);
-    background-color: var(--color-light);
+    /* Linear gradient: top is a light brown (#d2b48c) and bottom is another light brown (#f3e9dc) */
+    /*background: linear-gradient(135deg, #6e3818, #391d0d);*/
+    background: linear-gradient(135deg, #74ABE2, #5563DE);
+
     color: var(--color-text);
     line-height: 1.6;
 }
@@ -82,14 +83,21 @@ body {
 
 /* Home Page Styles */
 #home {
-    background-image: url('https://via.placeholder.com/1500x1000.png?text=Home+Background');
+    margin-top: 80px; /* Pushes home content below the fixed navbar */
+
     background-size: cover;
     background-position: center;
     color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 5rem;
+    flex-direction: row; /* Side-by-side layout */
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+}
+
+/* Container for text content on home page */
+.home-content {
+    max-width: 60%;
 }
 
 .home-title {
@@ -105,9 +113,25 @@ body {
     font-size: 1.1rem;
 }
 
+/* Photo Box Styles */
+.photo-box {
+    background-color: #f3e9dc; /* Set background color of photo box */
+    width: 300px; /* Fixed width for the photo box */
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.photo-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
 /* Projects Page Styles */
 #projects {
-    padding: 6rem 3rem 3rem;
+    padding: 1rem 3rem 3rem;
 }
 
 .section-title {
@@ -126,9 +150,10 @@ body {
 }
 
 .project-card {
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f3e9dc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
+    border-radius: 8px;
 }
 
 .project-card:hover {
@@ -215,7 +240,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 3rem 3rem;
+    padding: 1rem 3rem 3rem;
 }
 
 .contact-container {
@@ -342,5 +367,16 @@ body {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    #home {
+        margin-top: 80px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content, .photo-box {
+        max-width: 100%;
+        margin-bottom: 1rem;
     }
 }

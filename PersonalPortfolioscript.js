@@ -10,8 +10,14 @@ function showPage(pageId) {
     const selectedPage = document.getElementById(pageId);
     selectedPage.classList.add('active');
 
-    // Scroll to top of the page
-    window.scrollTo(0, 0);
+    // Calculate the fixed navbar's height
+    const navbarHeight = document.getElementById('navbar').offsetHeight;
+    
+    // Scroll so that the top of the selected page is immediately below the navbar
+    window.scrollTo({
+        top: selectedPage.offsetTop - navbarHeight,
+        behavior: 'smooth'
+    });
 }
 
 // Navbar Scroll Effect
@@ -27,7 +33,7 @@ window.addEventListener('scroll', () => {
 // Form Submission Handler
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
@@ -47,7 +53,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         return;
     }
 
-    // Simulate form submission (replace with actual form submission logic)
+    // Simulate form submission (replace with actual submission logic)
     alert(`Thank you, ${name}! Your message has been sent.`);
     this.reset();
 });
@@ -60,16 +66,16 @@ cookieButtons.forEach(button => {
     button.addEventListener('click', () => {
         if (button.classList.contains('accept')) {
             cookieNotice.style.display = 'none';
-            // You could add logic to set a cookie here
+            // Additional logic to set a cookie could be added here
         }
     });
 });
 
 // Project Details Modal (Placeholder)
-const projectLinks = document.querySelectorAll('.project-link');
+/*const projectLinks = document.querySelectorAll('.project-link');
 projectLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         alert('Project details modal would open here in a full implementation.');
     });
-});
+});*/
